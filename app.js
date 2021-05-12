@@ -32,7 +32,7 @@ app.use(cookieSession({
 const isLoggedIn=(req,res,next)=>{
   try{
     console.log(req.user._json.email);  
-  if(req.user._json.email==="ait.cear@gmail.com"){
+  if(req.user._json.email==="panchatt.media@gmail.com"){
     next();
   }
   else{
@@ -46,7 +46,7 @@ const isLoggedIn=(req,res,next)=>{
 const isLoggedInc=(req,res,next)=>{
   try{
     console.log("c",req.user._json.email);
-  if(req.user._json.email==="ait.cear@gmail.com"){
+  if(req.user._json.email==="panchatt.media@gmail.com"){
     res.redirect("/redirect");
   }
   else{
@@ -57,14 +57,12 @@ const isLoggedInc=(req,res,next)=>{
     next();
   }
 }
-// const checkLogin=(req,res)={
-//   if(re)
-// }
+
 app.use(bodyParser.json());
 app.use(passport.initialize());
 app.use(passport.session());
 
-mongoose.connect("mongodb+srv://AIT-CEAR:aitrobotics@1234@cluster0.4wa10.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",{useNewUrlParser: true,useUnifiedTopology: true,});
+mongoose.connect("mongodb+srv://Kem_palty:trivedi@adhiraj123@cluster0.cw41k.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",{useNewUrlParser: true,useUnifiedTopology: true,});
 mongoose.set("useFindAndModify", false);
 const blogSchema = new mongoose.Schema({
   date: Date,
