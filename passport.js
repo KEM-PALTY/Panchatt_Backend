@@ -12,9 +12,9 @@ passport.serializeUser(function(user, done) {
     //});
   });
 passport.use(new GoogleStrategy({
-    clientID: "57122513134-jpioiaqpclg6qe71f2v29ovnrms9l0a2.apps.googleusercontent.com",
-    clientSecret: "aN3UaQcvAkIBPlXwlwY4jn40",
-    callbackURL: "http://localhost:3000/auth/google/callback"
+    clientID: "235899062183-p4dmqc9gjdsumsrvrmf3irgc2pjvgj2c.apps.googleusercontent.com",
+    clientSecret: "BeobRH1abOTD139SWT4VRJh_",
+    callbackURL: "https://kem-palty-admin-panel.herokuapp.com/auth/google/callback"
   },
   function(accessToken, refreshToken, profile, cb) {
     //User.findOrCreate({ googleId: profile.id }, function (err, user) {
