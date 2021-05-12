@@ -35,7 +35,7 @@ function updateblogfunction(title,desc,publishedonpubblog,categoryblog,timeblog,
     try{
 $.ajax({
     type:"PATCH",
-    url:"https://kem-palty-admin-panel.herokuapp.com//api/blog/<%=data._id%>",
+    url:"https://kem-palty-admin-panel.herokuapp.com/api/blog/<%=data._id%>",
     data:{
         title:title,
         desc:desc,
@@ -63,7 +63,7 @@ $(".deletebuttonupdateblog").on("click",function(e){
         console.log("delete");
         $.ajax({
             type:"DELETE",
-            url:"https://kem-palty-admin-panel.herokuapp.com//api/blog/delete/<%=data._id%>",
+            url:"https://kem-palty-admin-panel.herokuapp.com/api/blog/delete/<%=data._id%>",
             success:"success"
         })
        location.replace("/");

@@ -250,7 +250,7 @@ app.delete("/api/blog/delete/:id",isLoggedIn, async(req, res) => {
 /**********************************************************ALL ROUTES********************************************************** */
 app.get("/check",(req,res)=>{
   try{
-  if(req.user._json.email==="ait.cear@gmail.com"){
+  if(req.user._json.email==="panchatt.media@gmail.com"){
     res.redirect("/redirect")
   }
   else{
@@ -284,7 +284,7 @@ app.get("/logout",isLoggedIn,(req,res)=>{
 app.get("/", (req, res) => {
   //res.render("login")
   try{
-    if(req.user._json.email==="ait.cear@gmail.com"){
+    if(req.user._json.email==="panchatt.media@gmail.com"){
       res.redirect("/redirect")
     }
     else{
@@ -340,6 +340,6 @@ if(gg.nextPageToken!=undefined){
 }
   }
 })
-app.listen(process.env.PORT || "5000", function () {
+app.listen(process.env.PORT || "3000", function () {
   console.log("Started at port 3000");
 });
