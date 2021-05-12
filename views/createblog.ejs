@@ -42,11 +42,9 @@ $.ajax({
         timeblog:timeblog,
         coverphotoblog:coverphotoblog
     },
-    success:function(data){
-        location.replace("/");
-    }
+    success:"success"    
 })
-
+location.replace("/")
 }
 catch(error){
     console.log(error);

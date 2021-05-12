@@ -320,7 +320,7 @@ app.get("/ytplaylistupdate",isLoggedIn,(req,res)=>{
 
 app.post("/updateyt",isLoggedIn, async (req,res)=>{
   count=0;
- go(`https://youtube.googleapis.com/youtube/v3/playlists?key=AIzaSyCwRP6-HU_B6M7vOBG4626TkK5SEBR0Ojs&channelId=UCvjgXvBlbQiydffZU7m1_aw&part=snippet`);
+ go(`https://youtube.googleapis.com/youtube/v3/playlists?key=AIzaSyCwRP6-HU_B6M7vOBG4626TkK5SEBR0Ojs&channelId=UCNaST5ZYBVjPOzhzU9lA7XA&part=snippet`);
   async function go(checkapi){
   const apii=checkapi;
   const resp=await fetch(apii);
@@ -335,7 +335,7 @@ app.post("/updateyt",isLoggedIn, async (req,res)=>{
 }
 if(gg.nextPageToken!=undefined){
   token=gg.nextPageToken;
-    sameurl=`https://youtube.googleapis.com/youtube/v3/playlists?key=AIzaSyCwRP6-HU_B6M7vOBG4626TkK5SEBR0Ojs&channelId=UCvjgXvBlbQiydffZU7m1_aw&pageToken=${token}&part=snippet`
+    sameurl=`https://youtube.googleapis.com/youtube/v3/playlists?key=AIzaSyCwRP6-HU_B6M7vOBG4626TkK5SEBR0Ojs&channelId=UCNaST5ZYBVjPOzhzU9lA7XA&pageToken=${token}&part=snippet`
     await go(sameurl);
 }
   }
