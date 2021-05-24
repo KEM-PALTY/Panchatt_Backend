@@ -18,7 +18,8 @@
 </div>
 
 <script>
-    $(".editblogadminclass").on("submit",function(){
+    $(".editblogadminclass").on("submit",function(e){
+        e.preventDefault();
     const title=$("#titleblog").val();
     const desc=$("#desc").val();
     const publishedonpubblog=$("#publishedonpubblog").val();
