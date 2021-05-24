@@ -19,7 +19,7 @@
 
 <script>
     $( document ).ready(function() {
-    $(".editblogadminclass").on("submit",function(){
+    $(".editblogadminclass").on("submit",function(e){
     const title=$("#titleblog").val();
     const desc=$("#desc").val();
     const publishedonpubblog=$("#publishedonpubblog").val();
@@ -28,6 +28,7 @@
     const coverphotoblog=$("#coverphotoblog").val();
     createblogfunction(title,desc,publishedonpubblog,categoryblog,timeblog,coverphotoblog);
     console.log(publishedonpubblog);
+e.preventDefault();
 })
     });
 
