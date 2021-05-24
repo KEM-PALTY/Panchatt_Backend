@@ -18,6 +18,7 @@
 </div>
 
 <script>
+    $( document ).ready(function() {
     $(".editblogadminclass").on("submit",function(){
     const title=$("#titleblog").val();
     const desc=$("#desc").val();
@@ -28,6 +29,7 @@
     createblogfunction(title,desc,publishedonpubblog,categoryblog,timeblog,coverphotoblog);
     console.log(publishedonpubblog);
 })
+    });
 
 function createblogfunction(title,desc,publishedonpubblog,categoryblog,timeblog,coverphotoblog){
     try{
