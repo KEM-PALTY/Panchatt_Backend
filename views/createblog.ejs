@@ -13,13 +13,12 @@
         <input type="number" name="" value="" id="timeblog" class="form-control" required>
         <label for="coverphotoblog">Cover Photo URL :</label>
         <input type="text" name="" value="" id="coverphotoblog" class="form-control" required>
-        <input type="button" value="Publish" id="submitbuttonupdateblog" class="btn btn-success">
+        <input type="submit" value="Publish" id="submitbuttonupdateblog" class="btn btn-success">
     </form>
 </div>
 
 <script>
-    $( document ).ready(function() {
-    $(".submitbuttonupdateblog").on("click",function(){
+    $(".editblogadminclass").on("submit",function(){
     const title=$("#titleblog").val();
     const desc=$("#desc").val();
     const publishedonpubblog=$("#publishedonpubblog").val();
@@ -29,7 +28,6 @@
     createblogfunction(title,desc,publishedonpubblog,categoryblog,timeblog,coverphotoblog);
     console.log(publishedonpubblog);
 })
-    });
 
 function createblogfunction(title,desc,publishedonpubblog,categoryblog,timeblog,coverphotoblog){
     try{
@@ -44,7 +42,7 @@ $.ajax({
         timeblog:timeblog,
         coverphotoblog:coverphotoblog
     },
-    success:function(){console.log("success")}    
+    success:function(data){alert(data)}   
 })
 location.replace("/")
 }
