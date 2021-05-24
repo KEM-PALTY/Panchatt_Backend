@@ -64,9 +64,11 @@ $(".deletebuttonupdateblog").on("click",function(e){
         $.ajax({
             type:"DELETE",
             url:"https://kem-palty-admin-panel.herokuapp.com/api/blog/delete/<%=data._id%>",
-            success:"success"
+            success:function(data){
+                location.replace("/");
+            }
         })
-       location.replace("/");
+       
     }
 })
 </script>
