@@ -91,7 +91,7 @@ app.post("/api/subscriber",(req,res)=>{
   })
 
   subscriberentry.save()
-  res.status(201).json({
+  res.status(201).set('Access-Control-Allow-Origin', '*').json({
     status:"success",
     data:{subscriberentry}
   })  
@@ -106,7 +106,7 @@ app.get("/api/subscriber",isLoggedIn, async(req,res)=>{
   const foundSubscriber= await subscriber.find(function(err,data){
     console.log("");
   })
-    res.status(200).json({
+    res.status(200).set('Access-Control-Allow-Origin', '*').json({
       status:"success",
       data:{foundSubscriber}
   })
@@ -129,7 +129,7 @@ app.post("/api/blog", isLoggedIn,(req, res) => {
       coverphoto: req.body.coverphotoblog,
     });
     addnews.save();
-    res.status(201).json({
+    res.status(201).set('Access-Control-Allow-Origin', '*').json({
       status: "success",
       data: {
         addnews,
@@ -143,9 +143,9 @@ app.get("/api/blog", (req, res) => {
   try {
     blogentry.find(function (err, data) {
       if (err) {
-        res.status(404).send("Data Not Found");
+        res.status(404).set('Access-Control-Allow-Origin', '*').send("Data Not Found");
       }
-      res.status(200).json({
+      res.status(200).set('Access-Control-Allow-Origin', '*').json({
         status: "success",
         totalrecords: data.length,
         data: {
@@ -166,7 +166,7 @@ app.get("/api/blog/:id", async (req, res) => {
         console.log(data);
       }
     );
-    res.status(200).json({
+    res.status(200).set('Access-Control-Allow-Origin', '*').json({
       status: "success",
       data: {
         single_blog,
@@ -193,7 +193,7 @@ app.patch("/api/blog/:id",isLoggedIn, async (req, res) => {
           }
       }
     );
-    res.status(201).json({
+    res.status(201).set('Access-Control-Allow-Origin', '*').json({
       status: "success",
       data: {
         update_single_blog
@@ -215,7 +215,7 @@ app.get("/api/blog/category/:category", async (req, res) => {
         console.log(data);
       }
     );
-    res.status(200).json({
+    res.status(200).set('Access-Control-Allow-Origin', '*').json({
       status: "success",
       data: {
         single_blog,
@@ -238,7 +238,7 @@ app.delete("/api/blog/delete/:id",isLoggedIn, async(req, res) => {
         }
       }
     );
-    res.status(200).json({
+    res.status(200).set('Access-Control-Allow-Origin', '*').json({
       status: "success",
     });
   } catch (error) {
